@@ -13,12 +13,11 @@ public class BowlingGameTest {
 
     @Test
     public void frame1_score_should_equals_5() {
-        BowlingGame bowlingGame1 = buildBowlingGame();
-        bowlingGame1.play();
-        Assert.assertEquals(5,bowlingGame1.getFrame(1).getScore());
+        BowlingGame game = new BowlingGame();
+        game.play(new Ball(1));
+        game.play(new Ball(4));
+        Assert.assertEquals(5, game.getFrame(1).getScore());
     }
 
-    private BowlingGame buildBowlingGame() {
-        return new BowlingGame();
-    }
+
 }
