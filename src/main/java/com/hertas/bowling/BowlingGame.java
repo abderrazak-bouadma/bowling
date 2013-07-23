@@ -13,6 +13,8 @@ public class BowlingGame {
         initFrames();
     }
 
+
+
     private void initFrames() {
         frameIndex = 0;
         frames = new ArrayList<BowlingFrame>();
@@ -21,12 +23,13 @@ public class BowlingGame {
         }
     }
 
-    public void play(Ball ball) {
+    public BowlingGame play(Ball ball) {
         BowlingFrame currentBowlingFrame = frames.get(frameIndex);
         if (currentBowlingFrame.allBallsPlayed(frameIndex))
             frameIndex++;
         frames.get(frameIndex).addBall(ball);
         calculateScore(frameIndex);
+        return this;
     }
 
     private void calculateScore(int index) {
@@ -40,5 +43,9 @@ public class BowlingGame {
 
     public int getScoreByFrameIndex(int i) {
         return frames.get(i - 1).getSavedScore();
+    }
+
+    public static BowlingGame newGame() {
+        return new BowlingGame();
     }
 }
