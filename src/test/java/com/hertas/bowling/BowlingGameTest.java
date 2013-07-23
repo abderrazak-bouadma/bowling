@@ -29,4 +29,9 @@ public class BowlingGameTest {
         game.play(new Ball(5));
         Assert.assertEquals(14, game.getScoreByFrameIndex(2));
     }
+
+    @Test
+    public void frame3_strike_calculate_score() {
+         //
+    }
 }
