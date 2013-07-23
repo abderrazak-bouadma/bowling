@@ -13,7 +13,9 @@ public class BowlingGame {
         initFrames();
     }
 
-
+    public static BowlingGame newGame() {
+        return new BowlingGame();
+    }
 
     private void initFrames() {
         frameIndex = 0;
@@ -34,18 +36,54 @@ public class BowlingGame {
 
     private void calculateScore(int index) {
         if (frames.get(index).allBallsPlayed(frameIndex)) {
-            int sumBallsKnockedPins = frames.get(index).getBall1().getKnockedPins() + frames.get(index).getBall2().getKnockedPins();
+            int sumBallsKnockedPins = frames.get(index).getBall1().getPinsKnockedOut() + frames.get(index).getBall2().getPinsKnockedOut();
             int previousFrameScore = index - 1 >= 0 ? frames.get(index - 1).getSavedScore() : 0;
             int score = sumBallsKnockedPins + previousFrameScore;
             frames.get(index).setSavedScore(score);
         }
     }
 
-    public int getScoreByFrameIndex(int i) {
-        return frames.get(i - 1).getSavedScore();
+    public int getFirstFrameScore() {
+        return getScoreByFrameIndex(1);
     }
 
-    public static BowlingGame newGame() {
-        return new BowlingGame();
+    public int getSecondFrameScore() {
+        return getScoreByFrameIndex(2);
+    }
+
+    public int getThirdFrameScore() {
+        return getScoreByFrameIndex(3);
+    }
+
+    public int getFourthFrameScore() {
+        return getScoreByFrameIndex(4);
+    }
+
+    public int getFifthFrameScore() {
+        return getScoreByFrameIndex(5);
+    }
+
+    public int getSixthFrameScore() {
+        return getScoreByFrameIndex(6);
+    }
+
+    public int getSeventhFrameScore() {
+        return getScoreByFrameIndex(7);
+    }
+
+    public int getEighthFrameScore() {
+        return getScoreByFrameIndex(8);
+    }
+
+    public int getNinethFrameScore() {
+        return getScoreByFrameIndex(9);
+    }
+
+    public int getTenthFrameScore() {
+        return getScoreByFrameIndex(10);
+    }
+
+    private int getScoreByFrameIndex(int i) {
+        return frames.get(i - 1).getSavedScore();
     }
 }

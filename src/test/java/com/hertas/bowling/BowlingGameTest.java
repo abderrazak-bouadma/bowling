@@ -8,14 +8,16 @@ public class BowlingGameTest {
     @Test
     public void frame1_score_should_equals_5() {
         BowlingGame game = BowlingGame.newGame().play(Ball.ONE_PIN_BALL).play(Ball.FOUR_PIN_BALL);
-        int scoreByFrameIndex = game.getScoreByFrameIndex(1);
-        Assert.assertEquals(5, scoreByFrameIndex);
+        int scoreByFrameIndex = game.getFirstFrameScore();
+        int expected = 5;
+        Assert.assertEquals(expected, scoreByFrameIndex);
     }
 
     @Test
     public void frame2_score_should_be_14() {
         BowlingGame game = BowlingGame.newGame().play(Ball.ONE_PIN_BALL).play(Ball.FOUR_PIN_BALL).play(Ball.FOUR_PIN_BALL).play(Ball.FIVE_PIN_BALL);
-        Assert.assertEquals(14, game.getScoreByFrameIndex(2));
+        int expected = 14;
+        Assert.assertEquals(expected, game.getSecondFrameScore());
     }
 
     @Test
