@@ -24,6 +24,7 @@ public class BowlingGameTest {
     public void frame2_score_should_be_14() {
         BowlingGame game = new BowlingGame();
         game.play(new Ball(1));
+
         game.play(new Ball(4));
         game.play(new Ball(4));
         game.play(new Ball(5));
