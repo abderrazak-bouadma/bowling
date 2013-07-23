@@ -30,17 +30,17 @@ public class BowlingGame {
         if (currentBowlingFrame.allBallsPlayed(frameIndex))
             frameIndex++;
         frames.get(frameIndex).addBall(ball);
-        calculateScore(frameIndex);
         return this;
     }
 
-    private void calculateScore(int index) {
-        if (frames.get(index).allBallsPlayed(frameIndex)) {
-            int sumBallsKnockedPins = frames.get(index).getBall1().getPinsKnockedOut() + frames.get(index).getBall2().getPinsKnockedOut();
-            int previousFrameScore = index - 1 >= 0 ? frames.get(index - 1).getSavedScore() : 0;
+    public BowlingGame calculateScore() {
+        if (frames.get(frameIndex).allBallsPlayed(frameIndex)) {
+            int sumBallsKnockedPins = frames.get(frameIndex).getBall1().getPinsKnockedOut() + frames.get(frameIndex).getBall2().getPinsKnockedOut();
+            int previousFrameScore = frameIndex - 1 >= 0 ? frames.get(frameIndex - 1).getSavedScore() : 0;
             int score = sumBallsKnockedPins + previousFrameScore;
-            frames.get(index).setSavedScore(score);
+            frames.get(frameIndex).setSavedScore(score);
         }
+        return this;
     }
 
     public int getFirstFrameScore() {
