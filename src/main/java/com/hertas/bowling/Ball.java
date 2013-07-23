@@ -8,6 +8,13 @@ package com.hertas.bowling;
  * To change this template use File | Settings | File Templates.
  */
 public class Ball {
+    private final int knockedPins;
+
+    public int getKnockedPins() {
+        return knockedPins;
+    }
+
     public Ball(int knockedPins) {
+        this.knockedPins = knockedPins;
     }
 }

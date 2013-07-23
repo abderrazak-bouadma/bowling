@@ -16,8 +16,17 @@ public class BowlingGameTest {
         BowlingGame game = new BowlingGame();
         game.play(new Ball(1));
         game.play(new Ball(4));
-        Assert.assertEquals(5, game.getFrame(1).getScore());
+        int scoreByFrameIndex = game.getScoreByFrameIndex(1);
+        Assert.assertEquals(5, scoreByFrameIndex);
     }
 
-
+    @Test
+    public void frame2_score_should_be_14() {
+        BowlingGame game = new BowlingGame();
+        game.play(new Ball(1));
+        game.play(new Ball(4));
+        game.play(new Ball(4));
+        game.play(new Ball(5));
+        Assert.assertEquals(14, game.getScoreByFrameIndex(2));
+    }
 }
