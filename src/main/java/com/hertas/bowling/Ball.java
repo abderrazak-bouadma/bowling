@@ -1,27 +1,27 @@
 package com.hertas.bowling;
 
 public enum Ball {
-    ZERO_PIN_BALL(0),
+    ZERO_PIN_KNOCKED(0),
 
-    ONE_PIN_BALL(1),
+    ONE_PIN_KNOCKED(1),
 
-    TWO_PIN_BALL(2),
+    TWO_PIN_KNOCKED(2),
 
-    THREE_PIN_BALL(3),
+    THREE_PIN_KNOCKED(3),
 
-    FOUR_PIN_BALL(4),
+    FOUR_PIN_KNOCKED(4),
 
-    FIVE_PIN_BALL(5),
+    FIVE_PIN_KNOCKED(5),
 
-    SIX_PIN_BALL(6),
+    SIX_PIN_KNOCKED(6),
 
-    SEVEN_PIN_BALL(7),
+    SEVEN_PIN_KNOCKED(7),
 
-    EIGHT_PIN_BALL(8),
+    EIGHT_PIN_KNOCKED(8),
 
-    NINE_PIN_BALL(9),
+    NINE_PIN_KNOCKED(9),
 
-    STRIKE_BALL(10);
+    STRIKE(10);
 
     private final int pinsKnockedOut;
 
