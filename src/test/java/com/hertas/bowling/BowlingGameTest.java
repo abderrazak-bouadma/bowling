@@ -12,10 +12,10 @@ import org.junit.Test;
 public class BowlingGameTest {
 
     @Test
-    public void frame1_score_should_equals_4() {
+    public void frame1_score_should_equals_5() {
         BowlingGame bowlingGame1 = buildBowlingGame();
         bowlingGame1.play();
-        Assert.assertEquals(4,bowlingGame1.getFrame(1).getScore());
+        Assert.assertEquals(5,bowlingGame1.getFrame(1).getScore());
     }
 
     private BowlingGame buildBowlingGame() {
